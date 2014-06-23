@@ -16,7 +16,7 @@ Inital Setup
 ============
 
     python manage.py syncdb
-    python manage.py migrate city_digits
+    python manage.py migrate citi_digits
     mkdir media/backup
     python manage.py import_old_data
 
@@ -75,8 +75,8 @@ Production setup
 
                : create database and project user (get username and password from client)
                     $ mysql -u root -p
-                    mysql> create database city_digits;
-                    mysql> grant all on city_digits.* to 'username' identified by 'password';
+                    mysql> create database citi_digits;
+                    mysql> grant all on citi_digits.* to 'username' identified by 'password';
 
                : update settings.py with db user and password
 
@@ -88,7 +88,7 @@ Production setup
 
                : do initial setup
                     $ python manage.py syncdb
-                    $ python manage.py migrate city_digits
+                    $ python manage.py migrate citi_digits
                     $ python manage.py import_old_data
 
 
