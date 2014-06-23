@@ -1,7 +1,7 @@
-citi_digits
+City-Digits
 ===========
 
-MIT Citi Digits
+MIT City Digits -- Module 2 on informal banking and alternative financial services
 
 
 Development Environment
@@ -16,7 +16,7 @@ Inital Setup
 ============
 
     python manage.py syncdb
-    python manage.py migrate citi_digits
+    python manage.py migrate city_digits
     mkdir media/backup
     python manage.py import_old_data
 
@@ -25,7 +25,7 @@ Inital Setup
 Production setup
 ================
 
-    The production environment for this application is ghostmap.mit.edu. The home directory will be '/var/www/citi_digits/' ($HOME_DIRECTORY). The installation
+    The production environment for this application is ghostmap.mit.edu. The home directory will be '/var/www/city_digits/' ($HOME_DIRECTORY). The installation
     directions below are specific to this production instance and may need to be altered for another server.
 
     2013_09_07 : Created ssh key-pair for client's github account
@@ -39,8 +39,8 @@ Production setup
                     $ virtualenv --no-site-packages city_digits
 
                : Checked out application from client's github to '$HOME_DIRECTORY/app/'
-                    $ git clone git@github.com:sw2279/citi_digits.git
-
+                    $ git clone git@github.com:NiJeLorg/City-Digits.git
+					
                : Activate virtual environment and install app dependencies
                     $ source $HOME_DIRECTORY/.virtualenv/city_digits/bin/activate
 
@@ -75,20 +75,20 @@ Production setup
 
                : create database and project user (get username and password from client)
                     $ mysql -u root -p
-                    mysql> create database citi_digits;
-                    mysql> grant all on citi_digits.* to 'username' identified by 'password';
+                    mysql> create database city_digits;
+                    mysql> grant all on city_digits.* to 'username' identified by 'password';
 
                : update settings.py with db user and password
 
                : set upstream repo (this will allow client to fetch updates from developers github)
-                    $ git remote add upstream https://github.com/datvikash/citi_digits.git
+                    $ git remote add upstream https://github.com/NiJeLorg/City-Digits.git
 
                 : install dateutil.parser
                     $ sudo pip install python-dateutil --upgrade
 
                : do initial setup
                     $ python manage.py syncdb
-                    $ python manage.py migrate citi_digits
+                    $ python manage.py migrate city_digits
                     $ python manage.py import_old_data
 
 
